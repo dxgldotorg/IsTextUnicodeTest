@@ -1,0 +1,15 @@
+﻿<Window x:Class="IsTextUnicodeTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IsTextUnicodeTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Enter text" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextInput" HorizontalAlignment="Left" Height="388" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" TextChanged="TextInput_TextChanged" AcceptsReturn="True"/>
+        <TextBox x:Name="TextOutput" HorizontalAlignment="Left" Margin="390,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="388" IsEnabled="False"/>
+        <Label x:Name="OutputLabel" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.87,0.107"/>
+    </Grid>
+</Window>
