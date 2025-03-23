@@ -18,6 +18,8 @@ namespace IsTextUnicodeTest
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("Advapi32", SetLastError = false)]
+        static extern bool IsTextUnicode(byte[] buf, int len, ref int opt);
         public MainWindow()
         {
             InitializeComponent();
@@ -26,8 +28,6 @@ namespace IsTextUnicodeTest
         private void TextInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             int flags = ~0;
-            [DllImport("Advapi32", SetLastError = false)]
-            static extern bool IsTextUnicode(byte[] buf, int len, ref int opt);
             byte[] ansitext = Encoding.Default.GetBytes(TextInput.Text);
             bool isunicode = IsTextUnicode(ansitext, ansitext.Length, ref flags);
             if (isunicode)
